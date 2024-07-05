@@ -1,5 +1,6 @@
 import { WORDS } from "./words.js";
 
+const CORRECT_COLOR = '#40E0D0'
 const NUMBER_OF_GUESSES = 6;
 let guessesRemaining = NUMBER_OF_GUESSES;
 let currentGuess = [];
@@ -103,8 +104,7 @@ function checkGuess () {
           // if letter index and right guess index are the same
           // letter is in the right position 
           if (currentGuess[i] === rightGuess[i]) {
-              // shade green 
-              letterColor = 'green'
+              letterColor = CORRECT_COLOR
           } else {
               // shade box yellow
               letterColor = 'yellow'
@@ -143,11 +143,11 @@ function shadeKeyBoard(letter, color) {
   for (const elem of document.getElementsByClassName("keyboard-button")) {
       if (elem.textContent === letter) {
           let oldColor = elem.style.backgroundColor
-          if (oldColor === 'green') {
+          if (oldColor === CORRECT_COLOR) {
               return
           } 
 
-          if (oldColor === 'yellow' && color !== 'green') {
+          if (oldColor === 'yellow' && color !== CORRECT_COLOR) {
               return
           }
 

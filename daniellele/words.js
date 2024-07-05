@@ -1,3 +1,6 @@
 export const WORDS = [
-  'smooj'
+  'smooj',
+  'teach',
+  'beach',
+  'jones'
 ]
