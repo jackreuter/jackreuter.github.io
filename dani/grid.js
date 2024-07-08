@@ -7,17 +7,17 @@ export const PUZZLE = {
     ['0','0','R','E','S']
   ],
   'across': [
-    '1. Certain spiked smoothie',
-    '6. Lead-in, casually',
-    '7. Fictional grassland known as the Riddermark',
-    '8. "Stinky" villain in Toy Story 2',
-    '9. Fancy dinner req., often'
+    'Certain spiked smoothie',
+    'Lead-in, casually',
+    'Fictional grassland known as the Riddermark',
+    '"Stinky" villain in Toy Story 2',
+    'Fancy dinner req., often'
   ],
   'down': [
-    '1. Title for Cristan Cole or Elton John (Brit. spelling)',
-    '2. L follower',
-    '3. Prefix with worldly',
-    '4. Something a teacher or marriage officiant may do',
-    '5. Where "we out to"'
+    'Title for Cristan Cole or Elton John (Brit.)',
+    'L follower',
+    'Prefix with worldly',
+    'Something a teacher or marriage officiant may do',
+    'Where "we out to"'
   ]
 }

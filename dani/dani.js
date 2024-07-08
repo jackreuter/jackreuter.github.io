@@ -75,8 +75,7 @@ function initBoard() {
 }
 
 function initClue() {
-  let clueDiv = document.getElementById("current-clue")
-
+  let clueDiv = document.getElementById("clue-text")
   clueDiv.addEventListener("click", () => {
     let primarySelection = document.getElementsByClassName("primary-selection")[0]
     let i = parseInt(primarySelection.parentNode.dataset.i)
@@ -87,11 +86,67 @@ function initClue() {
     displayClue()
   })
 
+  let previousClueDiv = document.getElementById("previous-clue")
+  previousClueDiv.addEventListener("click", () => selectPreviousClue())
+  previousClueDiv.textContent = "<"
+
+  let nextClueDiv = document.getElementById("next-clue")
+  nextClueDiv.addEventListener("click", () => selectNextClue())
+  nextClueDiv.textContent = ">"
+
   displayClue()
 }
 
 initBoard()
 initClue()
+
+function selectPreviousClue() {
+  let primarySelection = document.getElementsByClassName("primary-selection")[0]
+  let i = parseInt(primarySelection.parentNode.dataset.i)
+  let j = parseInt(primarySelection.dataset.j)
+
+  let newi;
+  let newj;
+  if (rowMode) {
+    newi = (i - 1) % 5
+    newj = 0
+    while (GRID[newi][newj] === '0') {
+      j++
+    }
+  } else {
+    newi = 0
+    newj = (j - 1) % 5
+    while (GRID[newi][newj] === '0') {
+      i++
+    }
+  }
+
+  setSelectedBox(newi, newj)
+}
+
+function selectNextClue() {
+  let primarySelection = document.getElementsByClassName("primary-selection")[0]
+  let i = parseInt(primarySelection.parentNode.dataset.i)
+  let j = parseInt(primarySelection.dataset.j)
+
+  let newi;
+  let newj;
+  if (rowMode) {
+    newi = (i + 1) % 5
+    newj = 0
+    while (GRID[newi][newj] === '0') {
+      newj++
+    }
+  } else {
+    newi = 0
+    newj = (j + 1) % 5
+    while (GRID[newi][newj] === '0') {
+      newi++
+    }
+  }
+
+  setSelectedBox(newi, newj)
+}
 
 document.addEventListener("keyup", (e) => {
   let pressedKey = String(e.key)
@@ -126,12 +181,14 @@ function deleteLetter () {
   let primarySelection = document.getElementsByClassName("primary-selection")[0]
   let letterSpan = primarySelection.querySelector(".letter-content")
 
-  if (letterSpan.textContent !== "") {
-    letterSpan.textContent = ""
-  } else {
+  if (letterSpan.textContent === "") {
     let [previousi, previousj] = previousBox()
     setSelectedBox(previousi, previousj)
   }
+
+  primarySelection = document.getElementsByClassName("primary-selection")[0]
+  letterSpan = primarySelection.querySelector(".letter-content")
+  letterSpan.textContent = ""
 }
 
 function selectNextBox() {
@@ -267,7 +324,7 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
   if (!target.classList.contains("keyboard-button")) {
       return
   }
-  let key = target.textContent
+  let key = target.id
 
   if (key === "Del") {
       key = "Backspace"
