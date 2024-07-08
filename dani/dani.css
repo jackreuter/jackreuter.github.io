@@ -1,16 +1,21 @@
 h1 {
   text-align: center;
   font-family: sans-serif;
- }
+}
 
- #game-board {
+#game-board {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+  width: 100vw;
+  aspect-ratio: 1 / 1;
 }
 
 body {
   font-family: sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .top-row {
@@ -22,17 +27,23 @@ body {
 }
 
 .letter-box {
-  position: relative; /* Relative positioning for the parent container */
+  position: relative;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
   font-size: 2.2rem;
   font-weight: 500;
-  height: 3rem;
-  width: 3rem;
+  flex: 1 1 20%; /* Flex basis to allow for resizing */
   display: flex;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+.letter-row {
+  display: flex;
+  flex: 1 1 20%; /* Flex basis to allow for resizing */
+  width: 100%;
 }
 
 .black-box {
@@ -50,7 +61,7 @@ body {
 #current-clue {
   background-color: aqua;
   height: 50px;
-  margin: 5px;
+  margin-top: 15px;
   display: flex;
   align-items: center;
 }
@@ -58,10 +69,6 @@ body {
 #clue-text {
   font-size: large;
   margin: 5px;
-}
-
-.letter-row {
-  display: flex;
 }
 
 .box-number {
@@ -102,9 +109,10 @@ body {
   left: 10px;
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 36px;
   cursor: pointer;
 }
+
 .back-button:focus {
   outline: none;
 }
