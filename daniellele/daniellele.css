@@ -1,6 +1,6 @@
 h1 {
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: sans-serif;
  }
 
  #game-board {
@@ -10,7 +10,7 @@ h1 {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: sans-serif;
 }
 
 .letter-box {
@@ -57,4 +57,17 @@ body {
   margin: 0 2px;
   cursor: pointer;
   text-transform: uppercase;
+}
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.back-button:focus {
+  outline: none;
 }
