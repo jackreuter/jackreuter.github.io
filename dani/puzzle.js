@@ -1,10 +1,10 @@
 export const PUZZLE = {
   'grid': [
-    ['S','M','O','O','J'],
-    ['I','N','T','R','O'],
-    ['R','O','H','A','N'],
-    ['0','P','E','T','E'],
-    ['0','0','R','E','S']
+    ['s','m','o','o','j'],
+    ['i','n','t','r','o'],
+    ['r','o','h','a','n'],
+    ['0','p','e','t','e'],
+    ['0','0','r','e','s']
   ],
   'across': [
     'Certain spiked smoothie',

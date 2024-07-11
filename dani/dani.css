@@ -30,7 +30,7 @@ body {
   position: relative;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 500;
   flex: 1 1 20%; /* Flex basis to allow for resizing */
   display: flex;
@@ -69,16 +69,18 @@ body {
 #previous-clue {
   width: 5vw;
   margin-left: 5px;
+  font-size: x-large;
 }
 
 #next-clue {
   width: 5vw;
   margin-right: 5px;
+  font-size: x-large;
 }
 
 #clue-text {
   width: 90vw;
-  font-size: large;
+  font-size: x-large;
   margin: 5px;
 }
 
@@ -126,10 +128,8 @@ body {
 }
 
 .keyboard-button {
-  background-color: white;
-  font-size: 1rem;
   font-weight: 400;
-  /* padding: 0.5rem; */
+  font-size: large;
   margin: 0 4px;
   cursor: pointer;
   text-transform: uppercase;

@@ -1,4 +1,4 @@
-import { PUZZLE } from "./grid.js";
+import { PUZZLE } from "./puzzle.js";
 
 const GRID = PUZZLE['grid']
 const ACROSS_CLUES = PUZZLE['across']
@@ -155,11 +155,6 @@ document.addEventListener("keyup", (e) => {
       return
   }
 
-  if (pressedKey === "Enter") {
-      checkGuess()
-      return
-  }
-
   let found = pressedKey.match(/[a-z]/gi)
   if (!found || found.length > 1) {
       return
@@ -175,6 +170,24 @@ function insertLetter (pressedKey) {
   let letterSpan = box.querySelector(".letter-content")
   letterSpan.textContent = pressedKey;
   selectNextBox()
+  checkPuzzle()
+}
+
+function checkPuzzle() {
+  for (let i=0; i<5; i++) {
+    for (let j=0; j<5; j++) {
+      let row = document.querySelector(`.letter-row[data-i='${i}']`)
+      let box = row.querySelector(`.letter-box[data-j='${j}']`)
+      let letterSpan = box.querySelector(".letter-content")
+
+      if (GRID[i][j] !== '0' && GRID[i][j] !== letterSpan.textContent) {
+        return false
+      }
+    }
+  }
+
+  console.log('you win!')
+  return true
 }
 
 function deleteLetter () {
