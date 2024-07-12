@@ -5,7 +5,7 @@ let remainingWords = WORDS
 
 function initBoard() {
   let board = document.getElementById("game-board")
-  let rows = remainingWords / 4
+  let rows = remainingWords.length / 4
   let index = 0
 
   for (let i = 0; i < rows; i++) {

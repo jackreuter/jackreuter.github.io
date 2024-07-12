@@ -6,7 +6,7 @@ export const PUZZLE = {
     'GARNER',
     'COLLECT',
     'BUCKET',
-    'ACCUMULATE',
+    '',
     'DAY',
     'STORE',
     'A',
