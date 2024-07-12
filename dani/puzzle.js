@@ -15,8 +15,8 @@ export const PUZZLE = {
   ],
   'down': [
     'Title for Cristan Cole or Elton John (Brit.)',
-    'L follower',
-    'Prefix with worldly',
+    'L followers',
+    'Worldly leader?',
     'Something a teacher or marriage officiant may do',
     'Where "we out to"'
   ]
