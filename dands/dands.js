@@ -2,6 +2,7 @@ import { PUZZLE } from "./puzzle.js"
 
 const GRID = PUZZLE['grid']
 const ANSWERS = PUZZLE['answers'] // Assuming the answer key is an array of strings
+const TOTAL_ANSWERS = ANSWERS.length
 
 let currentString = ""
 let isDragging = false
@@ -53,6 +54,8 @@ function initBoard() {
   // Touch events
   document.addEventListener("touchend", stopDragging, { passive: true })
   document.addEventListener("touchmove", onTouchMove, { passive: true })
+
+  updateProgressIndicator()
 }
 
 function startDragging(event) {
@@ -63,6 +66,7 @@ function startDragging(event) {
   const i = element.parentNode.parentNode.parentNode.dataset.i
   const j = element.parentNode.parentNode.dataset.j
   currentString = element.textContent
+  updateCurrentString(currentString)
   element.style.backgroundColor = 'aqua'
   previousElement = element
   selectedCoordinates.push(`${i},${j}`)
@@ -86,11 +90,11 @@ function addLetter(event) {
 
           const letter = innerCircle.textContent
           currentString += letter
+          updateCurrentString(currentString)
           innerCircle.style.backgroundColor = 'aqua'
           drawLine(previousElement, element)
           previousElement = element
           selectedCoordinates.push(coordinates)
-          console.log(selectedCoordinates)
         }
       }
     }
@@ -101,9 +105,8 @@ function stopDragging(event) {
   if (isDragging) {
     isDragging = false
     const possibleAnswer = selectedCoordinates.join(':')
-    console.log(possibleAnswer)
     if (ANSWERS.includes(possibleAnswer) && !completedAnswers.includes(possibleAnswer)) {
-      const isFirstAnswer = possibleAnswer === ANSWERS[0];
+      const isFirstAnswer = possibleAnswer === ANSWERS[0]
       const bgColor = isFirstAnswer ? 'yellow' : 'aqua'
 
       completedAnswers.push(possibleAnswer)
@@ -118,7 +121,8 @@ function stopDragging(event) {
         box.style.backgroundColor = bgColor
       })
       lines.forEach(line => line.style.backgroundColor = bgColor)
-
+      updateProgressIndicator()
+      currentString = ""
     } else {
       selectedCoordinates.forEach(coord => {
         let [i, j] = coord.split(',')
@@ -127,12 +131,25 @@ function stopDragging(event) {
       })
       // Remove lines if the string is not correct
       lines.forEach(line => line.remove())
+      currentString = ""
+      updateCurrentString("Not in word list")
     }
     previousElement = null
     selectedCoordinates = []
-    currentString = ""
     lines = [] // Reset the lines array
   }
+}
+
+function updateProgressIndicator() {
+  const progressIndicator = document.querySelector(".progress-indicator");
+  const completedCount = `<span class="bold-number">${completedAnswers.length}</span>`;
+  const totalCount = `<span class="bold-number">${TOTAL_ANSWERS}</span>`;
+  progressIndicator.innerHTML = `${completedCount} of ${totalCount} theme words found`;
+}
+
+function updateCurrentString(newString) {
+  const currenStringDiv = document.querySelector(".current-string")
+  currenStringDiv.textContent = newString
 }
 
 function onMouseMove(event) {

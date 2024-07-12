@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dands</title>
+    <title>Strands</title>
     <link rel="stylesheet" href="dands.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
     <link
@@ -13,18 +13,20 @@
   />
 </head>
 <body>
-    <h1> Dands</h1>
+    <div class="theme-card">
+      <div class="stripe">THEME</div>
+      <div class="theme-title">Bat Boys</div>
+    </div>
 
     <button onclick="location.href='/'" class="back-button">&#8592;</button>
     
-    <div id="game-board">
-    </div>
-
+    <div class="current-string">Current Guess</div>
+    <div id="game-board"></div>
+    <div class="progress-indicator"></div>
 <script
 src="https://code.jquery.com/jquery-3.6.0.min.js"
 integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script src="dands.js" type="module"></script>
 </body>
 </html>
