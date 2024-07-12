@@ -26,18 +26,12 @@ function initBoard() {
 
       let letterCircle = document.createElement("div")
       letterCircle.className = "letter-circle"
+      letterCircle.dataset.i = i
+      letterCircle.dataset.j = j
 
       let innerCircle = document.createElement("div")
       innerCircle.className = "inner-circle"
       innerCircle.textContent = GRID[i][j]
-
-      // Mouse events
-      letterCircle.addEventListener("mousedown", startDragging)
-      letterCircle.addEventListener("mouseover", addLetter)
-
-      // Touch events
-      letterCircle.addEventListener("touchstart", startDragging, { passive: false })
-      letterCircle.addEventListener("touchmove", addLetter, { passive: true })
 
       letterCircle.appendChild(innerCircle)
       box.appendChild(letterCircle)
@@ -46,6 +40,36 @@ function initBoard() {
 
     board.appendChild(row)
   }
+
+  // Event delegation for mouse and touch events
+  board.addEventListener("mousedown", (event) => {
+    const target = event.target.closest(".letter-circle");
+    if (target && board.contains(target)) {
+      startDragging(event, target);
+    }
+  });
+
+  board.addEventListener("mouseover", (event) => {
+    const target = event.target.closest(".letter-circle");
+    if (target && board.contains(target)) {
+      addLetter(event, target);
+    }
+  });
+
+  board.addEventListener("touchstart", (event) => {
+    const target = event.target.closest(".letter-circle");
+    if (target && board.contains(target)) {
+      startDragging(event, target);
+    }
+  }, { passive: false });
+
+  board.addEventListener("touchmove", (event) => {
+    const touchEvent = event.touches[0];
+    const target = document.elementFromPoint(touchEvent.clientX, touchEvent.clientY);
+    if (target && target.closest(".letter-circle") && board.contains(target)) {
+      addLetter(event, target.closest(".letter-circle"));
+    }
+  }, { passive: true });
 
   // Mouse events
   document.addEventListener("mouseup", stopDragging)
@@ -58,45 +82,38 @@ function initBoard() {
   updateProgressIndicator()
 }
 
-function startDragging(event) {
+function startDragging(event, target) {
   event.preventDefault() // Prevents the default drag behavior
   isDragging = true
-  const touchEvent = event.touches ? event.touches[0] : event
-  const element = touchEvent.target
-  const i = element.parentNode.parentNode.parentNode.dataset.i
-  const j = element.parentNode.parentNode.dataset.j
-  currentString = element.textContent
+  const i = target.dataset.i
+  const j = target.dataset.j
+  console.log(i, j, target)
+  currentString = target.textContent
   updateCurrentString(currentString)
-  element.style.backgroundColor = 'aqua'
-  previousElement = element
+  target.childNodes[0].style.backgroundColor = 'aqua'
+  previousElement = target
   selectedCoordinates.push(`${i},${j}`)
 }
 
-function addLetter(event) {
+function addLetter(event, target) {
   if (isDragging) {
-    const touchEvent = event.touches ? event.touches[0] : event
-    if (Number.isFinite(touchEvent.clientX) && Number.isFinite(touchEvent.clientY)) {
-      const element = document.elementFromPoint(touchEvent.clientX, touchEvent.clientY)
-      if (element && element.classList.contains('letter-circle')) {
-        const i = element.parentNode.parentNode.dataset.i
-        const j = element.parentNode.dataset.j
-        const coordinates = `${i},${j}`
-        if (!selectedCoordinates.includes(coordinates)) {
-          const innerCircle = element.childNodes[0]
-          if (innerCircle.classList.contains('used')) { return }
+    const i = target.dataset.i
+    const j = target.dataset.j
+    const coordinates = `${i},${j}`
+    if (!selectedCoordinates.includes(coordinates)) {
+      const innerCircle = target.childNodes[0]
+      if (innerCircle.classList.contains('used')) { return }
 
-          const [prevI, prevJ] = selectedCoordinates[selectedCoordinates.length - 1].split(',').map(Number)
-          if (Math.abs(i - prevI) > 1 || Math.abs(j - prevJ) > 1) { return }
+      const [prevI, prevJ] = selectedCoordinates[selectedCoordinates.length - 1].split(',').map(Number)
+      if (Math.abs(i - prevI) > 1 || Math.abs(j - prevJ) > 1) { return }
 
-          const letter = innerCircle.textContent
-          currentString += letter
-          updateCurrentString(currentString)
-          innerCircle.style.backgroundColor = 'aqua'
-          drawLine(previousElement, element)
-          previousElement = element
-          selectedCoordinates.push(coordinates)
-        }
-      }
+      const letter = innerCircle.textContent
+      currentString += letter
+      updateCurrentString(currentString)
+      innerCircle.style.backgroundColor = 'aqua'
+      drawLine(previousElement, target)
+      previousElement = target
+      selectedCoordinates.push(coordinates)
     }
   }
 }
@@ -113,7 +130,7 @@ function stopDragging(event) {
       selectedCoordinates.forEach(coord => {
         let [i, j] = coord.split(',')
         let box = document.querySelector(`[data-i="${i}"] [data-j="${j}"] .letter-circle .inner-circle`)
-        box.classList.add('used') 
+        box.classList.add('used')
         box.parentNode.removeEventListener("mousedown", startDragging)
         box.parentNode.removeEventListener("mouseover", addLetter)
         box.parentNode.removeEventListener("touchstart", startDragging)
@@ -155,8 +172,8 @@ function updateCurrentString(newString) {
 function onMouseMove(event) {
   if (isDragging) {
     const element = document.elementFromPoint(event.clientX, event.clientY)
-    if (element && element.classList.contains('letter-circle')) {
-      addLetter({ target: element })
+    if (element && element.closest(".letter-circle")) {
+      addLetter(event, element.closest(".letter-circle"))
     }
   }
 }
@@ -166,8 +183,8 @@ function onTouchMove(event) {
     const touchEvent = event.touches[0]
     if (Number.isFinite(touchEvent.clientX) && Number.isFinite(touchEvent.clientY)) {
       const element = document.elementFromPoint(touchEvent.clientX, touchEvent.clientY)
-      if (element && element.classList.contains('letter-circle')) {
-        addLetter({ target: element })
+      if (element && element.closest(".letter-circle")) {
+        addLetter(event, element.closest(".letter-circle"))
       }
     }
   }

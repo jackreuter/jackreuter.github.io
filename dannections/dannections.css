@@ -1,0 +1,64 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.advice {
+  font-size: x-large;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+#game-board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 95vw;
+  margin-top: 20px;
+}
+
+.box {
+  position: relative;
+  font-size: large;
+  font-weight: 700;
+  flex: 1 1 20%; /* Flex basis to allow for resizing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;
+  background-color: gainsboro;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+  padding: 5px; /* Padding */
+  margin: 5px; /* Margin to separate cards */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effect */
+}
+
+.row {
+  display: flex;
+  flex: 1 1 20%; /* Flex basis to allow for resizing */
+  width: 100%;
+}
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.back-button:focus {
+  outline: none;
+}
