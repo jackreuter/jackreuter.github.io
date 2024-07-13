@@ -62,3 +62,20 @@ body {
 .back-button:focus {
   outline: none;
 }
+
+.submit-button {
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  margin-top: 10px;
+  padding: 12px 24px;
+  font-size: 20px; /* Bigger font size */
+  background-color: black;
+  color: white;
+}
+
+.submit-button:disabled {
+  background-color: gainsboro; /* Grey background when disabled */
+  color: black;
+  cursor: not-allowed; /* Not-allowed cursor when disabled */
+}
