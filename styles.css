@@ -61,3 +61,16 @@ a:active {
   height: 15vh;
   margin-bottom: 20px;
 }
+
+.back-button-image {
+  height: 8vh;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  font-weight: bold;
+  height: 10vh;
+}

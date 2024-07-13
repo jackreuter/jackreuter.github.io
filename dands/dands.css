@@ -9,6 +9,17 @@ body {
   justify-content: center;
 }
 
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+ .image {
+  height: 8vh;
+ }
+
+
 .theme-title {
   text-align: center;
   font-family: sans-serif;
@@ -52,7 +63,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 90vw;
+  width: 85vw;
 }
 
 .progress-indicator {

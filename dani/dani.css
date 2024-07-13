@@ -61,7 +61,7 @@ body {
 #current-clue {
   background-color: aqua;
   height: 50px;
-  margin-top: 15px;
+  margin-top: 5px;
   display: flex;
   align-items: center;
 }
