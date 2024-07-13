@@ -1,5 +1,4 @@
 body {
-  font-family: sans-serif;
   margin: 0;
   padding: 0;
   display: flex;
@@ -11,7 +10,6 @@ body {
 
 .theme-title {
   text-align: center;
-  font-family: sans-serif;
   font-size: xx-large;
   font-weight: 700;
   padding-top: 5px;

@@ -1,6 +1,9 @@
+html {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .title {
   text-align: center;
-  font-family:sans-serif;
 }
 
 .box-container{
@@ -86,4 +89,51 @@ a:active {
   font-size: xx-large;
   font-weight: bold;
   height: 9vh;
+}
+
+#keyboard-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: teal;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#keyboard-cont div {
+  display: flex;
+}
+
+.first-row {
+  display: flex;
+  width: 100vw;
+  height: 40px;
+  justify-content: center;
+}
+
+.second-row {
+  display: flex;
+  width: 90vw;
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.third-row {
+  display: flex;
+  width: 85vw;
+  height: 40px;
+  justify-content: center;
+}
+
+.keyboard-button {
+  font-weight: 400;
+  font-size: large;
+  margin: 0 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  flex: 1;
+  outline: none;
+  border: none;
+  background-color: violet;
 }
