@@ -25,7 +25,7 @@ body {
 
 .box {
   position: relative;
-  font-size: small;
+  font-size: medium;
   font-weight: 700;
   flex: 1 1 20%; /* Flex basis to allow for resizing */
   display: flex;
@@ -37,8 +37,7 @@ body {
   background-color: gainsboro;
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
-  padding: 5px; /* Padding */
-  margin: 5px; /* Margin to separate cards */
+  margin: 4px; /* Margin to separate cards */
   transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effect */
 }
 
