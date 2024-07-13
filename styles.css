@@ -23,6 +23,11 @@
   }
 }
 
+.box {
+  display: flex;
+  flex-direction: column;
+}
+
 a:link { 
   text-decoration: none; 
 } 
@@ -50,4 +55,9 @@ a:active {
 
 #daniellele {
   background-color: greenyellow;
+}
+
+.icon {
+  height: 15vh;
+  margin-bottom: 20px;
 }
