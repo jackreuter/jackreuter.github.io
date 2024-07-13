@@ -10,7 +10,7 @@ body {
 
 .theme-title {
   text-align: center;
-  font-size: xx-large;
+  font-size: x-large;
   font-weight: 700;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -40,7 +40,7 @@ body {
 }
 
 .current-string {
-  font-size: xx-large;
+  font-size: x-large;
   margin-bottom: 5px;
   margin-top: 5px;
 }
@@ -54,7 +54,7 @@ body {
 }
 
 .progress-indicator {
-  font-size: x-large;
+  font-size: large;
   margin-top: 15px;
 }
 
@@ -64,7 +64,7 @@ body {
 
 .letter-box {
   position: relative;
-  font-size: 2.5rem;
+  font-size: large;
   font-weight: 300;
   flex: 1 1 20%; /* Flex basis to allow for resizing */
   display: flex;

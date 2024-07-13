@@ -9,7 +9,7 @@ body {
 }
 
 .advice {
-  font-size: x-large;
+  font-size: large;
   margin-bottom: 5px;
   margin-top: 5px;
 }
@@ -25,7 +25,7 @@ body {
 
 .box {
   position: relative;
-  font-size: large;
+  font-size: small;
   font-weight: 700;
   flex: 1 1 20%; /* Flex basis to allow for resizing */
   display: flex;
@@ -54,7 +54,7 @@ body {
   border-radius: 20px;
   margin-left: 10px;
   padding: 12px 24px;
-  font-size: 20px; /* Bigger font size */
+  font-size: medium;
   background-color: black;
   color: white;
 }
@@ -71,7 +71,7 @@ body {
   border-radius: 20px;
   margin-left: 10px;
   padding: 12px 24px;
-  font-size: 20px; /* Bigger font size */
+  font-size: medium;
   background-color: turquoise;
 }
 
@@ -81,7 +81,7 @@ body {
   border-radius: 20px;
   margin-left: 10px;
   padding: 12px 24px;
-  font-size: 20px; /* Bigger font size */
+  font-size: medium;
   background-color: teal;
 }
 

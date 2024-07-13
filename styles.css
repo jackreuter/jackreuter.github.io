@@ -129,7 +129,7 @@ a:active {
 .keyboard-button {
   font-weight: 400;
   font-size: large;
-  margin: 0 4px;
+  margin: 0 2px;
   cursor: pointer;
   text-transform: uppercase;
   flex: 1;
