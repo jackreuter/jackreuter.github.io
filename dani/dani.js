@@ -174,6 +174,9 @@ function insertLetter (pressedKey) {
 }
 
 function checkPuzzle() {
+  var audio = document.getElementById('audioPlayer');
+  audio.play();
+
   for (let i=0; i<5; i++) {
     for (let j=0; j<5; j++) {
       let row = document.querySelector(`.letter-row[data-i='${i}']`)
