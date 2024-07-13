@@ -23,6 +23,7 @@ body {
   text-align: center;
   width: 65vw;
   position: relative;
+  margin-bottom: 5px;
 }
 
 .stripe {
@@ -62,8 +63,7 @@ body {
 
 .letter-box {
   position: relative;
-  font-size: large;
-  font-weight: 300;
+  font-size: x-large;
   flex: 1 1 20%; /* Flex basis to allow for resizing */
   display: flex;
   justify-content: center;
