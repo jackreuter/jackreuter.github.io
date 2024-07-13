@@ -79,3 +79,14 @@ body {
   color: black;
   cursor: not-allowed; /* Not-allowed cursor when disabled */
 }
+
+.answer-bar {
+  width: 100%;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #ccc;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid #000;
+}

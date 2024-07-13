@@ -6,7 +6,7 @@ export const PUZZLE = {
     'GARNER',
     'COLLECT',
     'BUCKET',
-    '',
+    'DERP',
     'DAY',
     'STORE',
     'A',
@@ -16,5 +16,11 @@ export const PUZZLE = {
     'SUMMER',
     'H',
     'TOP'
-  ]
+  ],
+  'answers': {
+    'BOWLER,BUCKET,DAD,TOP': {
+      'difficulty': 0,
+      'description': 'Kinds of hats'
+    }
+  }
 }
