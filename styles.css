@@ -62,8 +62,21 @@ a:active {
   margin-bottom: 20px;
 }
 
+.back-button {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.back-button:focus {
+  outline: none;
+}
+
 .back-button-image {
-  height: 8vh;
+  height: 9vh;
 }
 
 .top-bar {
@@ -72,5 +85,5 @@ a:active {
   align-items: center;
   font-size: xx-large;
   font-weight: bold;
-  height: 8vh;
+  height: 9vh;
 }

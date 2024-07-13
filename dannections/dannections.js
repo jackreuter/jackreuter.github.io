@@ -5,8 +5,10 @@ const ANSWERS = PUZZLE['answers']
 let remainingWords = WORDS
 let guesses = []
 let submittedRows = []
+let guessesRemaining = 4
 
-let answerColors = ['yellow', 'green', 'blue', 'purple']
+let answerColors = ['yellow', 'lightgreen', 'aqua', 'violet']
+shuffle(remainingWords)
 
 function initBoard() {
   let board = document.getElementById("game-board")
@@ -14,12 +16,26 @@ function initBoard() {
 
   // Create custom bars for submitted rows
   for (let i = 0; i < submittedRows.length; i++) {
+    let row = document.createElement("div")
+    row.className = "row"
+
     let answerBar = document.createElement("div")
-    answerBar.className = "custom-bar"
-    answerBar.textContent = ANSWERS[submittedRows[i]]['description']
-    console.log(submittedRows[i], ANSWERS[submittedRows[i]]['difficulty'])
-    answerBar.backgroundColor = answerColors[ANSWERS[submittedRows[i]]['difficulty']]
-    board.appendChild(answerBar)
+    answerBar.className = "answer-bar"
+
+    let answerTitle = document.createElement("div")
+    answerTitle.className = "answer-title"
+
+    let answerDescription = document.createElement("div")
+    answerDescription.className = "answer-description"
+
+    answerTitle.textContent = ANSWERS[submittedRows[i]]['title']
+    answerDescription.textContent = ANSWERS[submittedRows[i]]['description']
+    answerBar.style.backgroundColor = answerColors[ANSWERS[submittedRows[i]]['difficulty']]
+
+    answerBar.appendChild(answerTitle)    
+    answerBar.appendChild(answerDescription)
+    row.appendChild(answerBar)
+    board.appendChild(row)
   }
 
   let index = 0
@@ -44,6 +60,15 @@ function initBoard() {
 
     board.appendChild(row)
   }
+
+  // Create guesses remaining dots
+  let guessDots = document.getElementById("guess-dots")
+  guessDots.innerHTML = ''
+  for (let i = 0; i < guessesRemaining; i++) {
+    let dot = document.createElement("div")
+    dot.className = "dot"
+    guessDots.appendChild(dot)
+  }
 }
 
 function handleBoxClick(box) {
@@ -53,7 +78,7 @@ function handleBoxClick(box) {
     guesses = guesses.filter(guess => guess !== word)
   } else {
     if (guesses.length >= 4) return
-    box.style.backgroundColor = "aqua"
+    box.style.backgroundColor = "darkgray"
     guesses.push(word)
   }
 
@@ -73,7 +98,10 @@ function handleSubmit() {
 
     // Increment submitted rows count
     submittedRows.push(potentialAnswer)
+  } else {
+    guessesRemaining--
   }
+
   // Re-render the board
   initBoard()
 
@@ -82,9 +110,42 @@ function handleSubmit() {
   updateSubmitButtonState()
 }
 
+function handleShuffle() {
+  shuffle(remainingWords)
+  initBoard()
+}
+
+function handleDeselectAll() {
+  guesses = []
+  initBoard()
+  updateSubmitButtonState()
+}
+
+function shuffle(array) {
+  let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initBoard()
 
   let submitButton = document.getElementsByClassName("submit-button")[0]
   submitButton.addEventListener("click", handleSubmit)
+
+  let shuffleButton = document.getElementsByClassName("shuffle-button")[0]
+  shuffleButton.addEventListener("click", handleShuffle)
+
+  let deselectAllButton = document.getElementsByClassName("deselect-all-button")[0]
+  deselectAllButton.addEventListener("click", handleDeselectAll)
 })

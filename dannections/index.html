@@ -23,7 +23,18 @@
   <div class="advice">Create groups of 4!</div>
   <div id="game-board"></div>
 
-  <button class="submit-button" disabled="true">Submit</button>
+  <div class="bottom-bar">
+    <div class="guesses-remaining">
+      Mistakes Remaining:
+      <div id="guess-dots"></div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <button class="deselect-all-button">Deselect All</button>
+    <button class="shuffle-button">Shuffle</button>
+    <button class="submit-button" disabled="true">Submit</button>
+  </div>
 
   <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"

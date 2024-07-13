@@ -134,17 +134,3 @@ body {
   text-transform: uppercase;
   flex: 1;
 }
-
-.back-button {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: none;
-  border: none;
-  font-size: 36px;
-  cursor: pointer;
-}
-
-.back-button:focus {
-  outline: none;
-}
