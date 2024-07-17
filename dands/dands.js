@@ -128,6 +128,9 @@ function stopDragging(event) {
     if (ANSWERS.includes(possibleAnswer) && !completedAnswers.includes(possibleAnswer)) {
       const isFirstAnswer = possibleAnswer === ANSWERS[0]
       const bgColor = isFirstAnswer ? 'yellow' : 'aqua'
+      if (isFirstAnswer) {
+        toastr.success('Spangram!')
+      }
 
       completedAnswers.push(possibleAnswer)
       selectedCoordinates.forEach(coord => {
