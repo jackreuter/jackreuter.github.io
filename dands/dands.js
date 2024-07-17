@@ -84,11 +84,13 @@ function initBoard() {
 }
 
 function startDragging(event, target) {
+  const innerCircle = target.childNodes[0]
+  if (innerCircle.classList.contains('used')) { return }
+
   event.preventDefault() // Prevents the default drag behavior
   isDragging = true
   const i = target.dataset.i
   const j = target.dataset.j
-  console.log(i, j, target)
   currentString = target.textContent
   updateCurrentString(currentString)
   target.childNodes[0].style.backgroundColor = 'aqua'

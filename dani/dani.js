@@ -176,26 +176,42 @@ function insertLetter (pressedKey) {
 }
 
 function checkPuzzle() {
+  let wrong = 0
+  let right = 0
+  let empty = 0
+  let total = 0
   for (let i=0; i<5; i++) {
     for (let j=0; j<5; j++) {
       let row = document.querySelector(`.letter-row[data-i='${i}']`)
       let box = row.querySelector(`.letter-box[data-j='${j}']`)
       let letterSpan = box.querySelector(".letter-content")
 
-      if (GRID[i][j] !== '0' && GRID[i][j] !== letterSpan.textContent) {
-        return false
+      if (GRID[i][j] !== '0') {
+        total++
+        if (letterSpan.textContent === '') { empty++ }
+
+        else {
+          if (GRID[i][j] !== letterSpan.textContent) { wrong++ }
+          if (GRID[i][j] === letterSpan.textContent) { right++ }
+        }
       }
     }
   }
-  var audio = document.getElementById('audioPlayer');
-  audio.play();
-  toastr.success("You win!")
-  confetti({
-    particleCount: 100,
-    spread: 70,
-    origin: { y: 0.6 }
-  })
-  return true
+
+  if (empty === 0) {
+    if (wrong === 0) {
+      var audio = document.getElementById('audioPlayer');
+      audio.play();
+      toastr.success("You win!")
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      })
+    } else {
+      toastr.error("Something's not right")
+    }
+  }
 }
 
 function deleteLetter () {
