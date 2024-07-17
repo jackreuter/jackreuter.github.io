@@ -30,7 +30,7 @@ body {
   border-right: 1px solid black;
   border-bottom: 1px solid black;
   font-size: xxx-large;
-  font-weight: 300;
+  font-weight: 500;
   flex: 1 1 20%; /* Flex basis to allow for resizing */
   display: flex;
   justify-content: center;

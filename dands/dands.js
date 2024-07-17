@@ -1,4 +1,5 @@
 import { PUZZLE } from "./puzzle.js"
+import confetti from 'https://cdn.skypack.dev/canvas-confetti'
 
 const GRID = PUZZLE['grid']
 const ANSWERS = PUZZLE['answers'] // Assuming the answer key is an array of strings
@@ -162,6 +163,15 @@ function updateProgressIndicator() {
   const completedCount = `<span class="bold-number">${completedAnswers.length}</span>`;
   const totalCount = `<span class="bold-number">${TOTAL_ANSWERS}</span>`;
   progressIndicator.innerHTML = `${completedCount} of ${totalCount} theme words found`;
+
+  if (completedCount === totalCount) {
+    toastr.success("You win!")
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    })
+  }
 }
 
 function updateCurrentString(newString) {

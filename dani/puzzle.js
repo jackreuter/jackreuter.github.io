@@ -7,17 +7,17 @@ export const PUZZLE = {
     ['0','0','r','e','s']
   ],
   'across': [
-    'Certain spiked smoothie',
-    'Lead-in, casually',
-    'Fictional grassland known as the Riddermark',
+    'Spiked smoothie from Ann Arbor',
+    "It's a start",
+    'Realm south of Fangorn Forest',
     '"Stinky" villain in Toy Story 2',
     'Fancy dinner req., often'
   ],
   'down': [
     'Title for Cristan Cole or Elton John (Brit.)',
-    'L followers',
+    'Queue after L',
     'Worldly leader?',
-    'Something a teacher or marriage officiant may do',
+    'Something a teacher or wedding officiant may do',
     'Where "we out to"'
   ]
 }

@@ -1,4 +1,5 @@
-import { WORDS } from "./words.js";
+import { WORDS } from "./words.js"
+import confetti from 'https://cdn.skypack.dev/canvas-confetti'
 
 const CORRECT_COLOR = '#40E0D0'
 const NUMBER_OF_GUESSES = 6;
@@ -123,7 +124,12 @@ function checkGuess () {
   }
 
   if (guessString === rightGuessString) {
-      toastr.success("You guessed right! Game over!")
+      toastr.success("You win!")
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      })
       guessesRemaining = 0
       return
   } else {
@@ -159,10 +165,10 @@ function shadeKeyBoard(letter, color) {
 document.getElementById("keyboard-cont").addEventListener("click", (e) => {
   const target = e.target
   
-  if (!target.classList.contains("keyboard-button")) {
+  if (!(target.classList.contains("keyboard-button") || target.classList.contains("enter-button"))) {
       return
   }
-  let key = target.textContent
+  let key = target.id
 
   if (key === "Del") {
       key = "Backspace"

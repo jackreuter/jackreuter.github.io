@@ -1,4 +1,6 @@
-import { PUZZLE } from "./puzzle.js";
+import { PUZZLE } from "./puzzle.js"
+import confetti from 'https://cdn.skypack.dev/canvas-confetti'
+
 
 const GRID = PUZZLE['grid']
 const ACROSS_CLUES = PUZZLE['across']
@@ -187,8 +189,12 @@ function checkPuzzle() {
   }
   var audio = document.getElementById('audioPlayer');
   audio.play();
-
-  console.log('you win!')
+  toastr.success("You win!")
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.6 }
+  })
   return true
 }
 

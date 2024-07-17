@@ -1,4 +1,5 @@
 import { PUZZLE } from "./puzzle.js"
+import confetti from 'https://cdn.skypack.dev/canvas-confetti'
 
 const WORDS = PUZZLE['words']
 const ANSWERS = PUZZLE['answers']
@@ -108,6 +109,15 @@ function handleSubmit() {
   // Reset guesses
   guesses = []
   updateSubmitButtonState()
+
+  if (remainingWords.length === 0) {
+    toastr.success("You win!")
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    })
+  }
 }
 
 function handleShuffle() {
