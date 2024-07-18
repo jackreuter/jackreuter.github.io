@@ -3,10 +3,6 @@ html {
   touch-action: manipulation;
 }
 
-body {
-  margin: 2vw;
-}
-
 main {
   display: flex;
   flex-direction: column;
