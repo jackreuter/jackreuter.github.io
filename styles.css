@@ -3,6 +3,52 @@ html {
   touch-action: manipulation;
 }
 
+body {
+  margin: 2vw;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#party-button {
+  width: 90vw;
+  height: 20vw;
+  border-radius: 5%;
+  margin: 5vw;
+  background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400%;
+  color: white;
+  font-size: x-large;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+#party-button:active {
+  transform: translateY(4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#party-button:hover {
+  animation: rainbow 5s ease infinite;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .title {
   text-align: center;
 }
@@ -15,6 +61,7 @@ html {
   grid-row: auto auto;
   grid-column-gap: 2vw;
   grid-row-gap: 2vw;
+  width: 98vw;
   .box{
     color: #000;
     border-radius: 10px;

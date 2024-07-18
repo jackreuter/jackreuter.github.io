@@ -5,11 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="module">
+        import confetti from 'https://cdn.skypack.dev/canvas-confetti'
+
+        function fireConfetti() {
+            const button = document.getElementById('party-button');
+            const rect = button.getBoundingClientRect();
+            const x = (rect.left + rect.right) / 2 / window.innerWidth;
+            const y = (rect.top + rect.bottom) / 2 / window.innerHeight;
+            for (let i = 0; i < 1; i++) {
+                confetti({
+                    angle: Math.random() * 100 + 40,
+                    particleCount: Math.random() * 500 + 5,
+                    spread: Math.random() * 100 + 5,
+                    origin: {
+                        x: x,
+                        y: y
+                    }
+                })
+            }
+        }
+
+        window.fireConfetti = fireConfetti
+    </script>
 </head>
 <body>
     <main>
         <div class="title">
-            <h1>Dani turns 30!</h1>
+            <h1>Dani's turning 30!</h1>
+            <h3>Here are some puzzles to celebrate :)</h3>
         </div>
         <div class="box-container">
             <a class="box" id="daniellele" href="daniellele">
@@ -29,6 +53,8 @@
                 Strands
             </a>
         </div>
+
+        <button id="party-button" onclick="fireConfetti()">PARTY</button>
     </main>
 </body>
 </html>

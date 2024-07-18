@@ -88,7 +88,7 @@ function handleBoxClick(box) {
 
 function updateSubmitButtonState() {
   let submitButton = document.getElementsByClassName("submit-button")[0]
-  submitButton.disabled = guesses.length !== 4
+  submitButton.disabled = guesses.length !== 4 || guessesRemaining < 1
 }
 
 function handleSubmit() {
@@ -101,6 +101,11 @@ function handleSubmit() {
     submittedRows.push(potentialAnswer)
   } else {
     guessesRemaining--
+
+    if (guessesRemaining > 0) { toastr.error('Nope!') }
+    else {
+      toastr.error('No mistakes left! Game Over.')
+    }
   }
 
   // Re-render the board
@@ -121,6 +126,7 @@ function handleSubmit() {
 }
 
 function handleShuffle() {
+  handleDeselectAll()
   shuffle(remainingWords)
   initBoard()
 }
