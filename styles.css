@@ -49,6 +49,43 @@ main {
   100% { background-position: 0% 50%; }
 }
 
+.title h1 {
+  font-size: xx-large;
+  color: #ff69b4;
+  text-align: center;
+  text-shadow: 3px 3px #ff1493, 6px 6px #ff6347, 9px 9px #ffa500;
+  animation: rainbow-text 3s infinite;
+  margin: 0px;
+}
+
+h4 {
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+}
+
+@keyframes rainbow-text {
+  0%, 100% {
+      color: #ff69b4;
+      text-shadow: 3px 3px #ff1493, 6px 6px #ff6347, 9px 9px #ffa500;
+  }
+  20% {
+      color: #ff6347;
+      text-shadow: 3px 3px #ffa500, 6px 6px #ff69b4, 9px 9px #ff1493;
+  }
+  40% {
+      color: #ffa500;
+      text-shadow: 3px 3px #ff69b4, 6px 6px #ff1493, 9px 9px #ff6347;
+  }
+  60% {
+      color: #ff1493;
+      text-shadow: 3px 3px #ff6347, 6px 6px #ffa500, 9px 9px #ff69b4;
+  }
+  80% {
+      color: #ff69b4;
+      text-shadow: 3px 3px #ff1493, 6px 6px #ff6347, 9px 9px #ffa500;
+  }
+}
+
 .title {
   text-align: center;
 }
