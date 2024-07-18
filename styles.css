@@ -13,7 +13,7 @@ main {
 #party-button {
   width: 90vw;
   height: 20vw;
-  border-radius: 5%;
+  border-radius: 10px;
   margin: 5vw;
   background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
   background-size: 400%;
@@ -47,9 +47,9 @@ main {
 
 .title h1 {
   font-size: xx-large;
-  color: #ff69b4;
+  color: #00ced1; /* Higher contrast teal color */
   text-align: center;
-  text-shadow: 3px 3px #ff1493, 6px 6px #ff6347, 9px 9px #ffa500;
+  text-shadow: 3px 3px #008b8b, 6px 6px #20b2aa, 9px 9px #5f9ea0; /* Darker shadows for higher contrast */
   animation: rainbow-text 3s infinite;
   margin: 0px;
 }
@@ -61,24 +61,24 @@ h4 {
 
 @keyframes rainbow-text {
   0%, 100% {
-      color: #ff69b4;
-      text-shadow: 3px 3px #ff1493, 6px 6px #ff6347, 9px 9px #ffa500;
+      color: #00ced1;
+      text-shadow: 3px 3px #008b8b, 6px 6px #20b2aa, 9px 9px #5f9ea0;
   }
   20% {
-      color: #ff6347;
-      text-shadow: 3px 3px #ffa500, 6px 6px #ff69b4, 9px 9px #ff1493;
+      color: #20b2aa;
+      text-shadow: 3px 3px #5f9ea0, 6px 6px #00ced1, 9px 9px #008b8b;
   }
   40% {
-      color: #ffa500;
-      text-shadow: 3px 3px #ff69b4, 6px 6px #ff1493, 9px 9px #ff6347;
+      color: #5f9ea0;
+      text-shadow: 3px 3px #00ced1, 6px 6px #008b8b, 9px 9px #20b2aa;
   }
   60% {
-      color: #ff1493;
-      text-shadow: 3px 3px #ff6347, 6px 6px #ffa500, 9px 9px #ff69b4;
+      color: #008b8b;
+      text-shadow: 3px 3px #20b2aa, 6px 6px #5f9ea0, 9px 9px #00ced1;
   }
   80% {
-      color: #ff69b4;
-      text-shadow: 3px 3px #ff1493, 6px 6px #ff6347, 9px 9px #ffa500;
+      color: #00ced1;
+      text-shadow: 3px 3px #008b8b, 6px 6px #20b2aa, 9px 9px #5f9ea0;
   }
 }
 
