@@ -14,7 +14,7 @@ export const PUZZLE = {
     'Fancy dinner req., often'
   ],
   'down': [
-    '"Hello, ___" (how Danielle greets animals)',
+    'Title for Cristan Cole (Brit. sp.)',
     'Queue after L',
     'Worldly leader?',
     'Something a teacher or wedding officiant may do',
