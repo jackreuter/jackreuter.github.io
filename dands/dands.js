@@ -214,10 +214,13 @@ function drawLine(startElement, endElement) {
   const endRect = endElement.getBoundingClientRect()
   const lineWeight = 10
 
-  let x1 = Math.round(startRect.left + (startRect.width / 2))
-  let y1 = Math.round(startRect.top + (startRect.height / 2))
-  let x2 = Math.round(endRect.left + (endRect.width / 2))
-  let y2 = Math.round(endRect.top + (endRect.height / 2))
+  const scrollX = window.scrollX || window.pageXOffset;
+  const scrollY = window.scrollY || window.pageYOffset;
+
+  let x1 = Math.round(startRect.left + (startRect.width / 2)) + scrollX
+  let y1 = Math.round(startRect.top + (startRect.height / 2)) + scrollY
+  let x2 = Math.round(endRect.left + (endRect.width / 2)) + scrollX
+  let y2 = Math.round(endRect.top + (endRect.height / 2)) + scrollY
 
   // Adjust coordinates based on direction
   if (x2 > x1 || y2 > y1) {
