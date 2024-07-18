@@ -1,42 +1,42 @@
 export const PUZZLE = {
   'words': [
-    'DAD',
-    'SPRING',
-    'BOWLER',
-    'GARNER',
-    'COLLECT',
-    'BUCKET',
-    'DERP',
-    'DAY',
-    'STORE',
     'MULL',
-    'NIGHT',
-    'PONDER',
-    'CONSIDER',
-    'SUMMER',
-    'THINK',
-    'TOP'
+    'DEN',
+    'YELL',
+    'ERR',
+    'GARLIC',
+    'SLIP',
+    'SQUARE',
+    'MUSCLE',
+    'FULL',
+    'BLOOD',
+    'BLUE',
+    'NEW',
+    'BRIGHT',
+    'SHINING',
+    'RADIANT',
+    'SUNNY'
   ],
   'answers': {
-    'BOWLER,BUCKET,DAD,TOP': {
+    'BRIGHT,RADIANT,SHINING,SUNNY': {
       'difficulty': 0,
-      'title': 'Kinds of hats',
-      'description': 'Bowler, Bucket, Dad, Top'
+      'title': 'LIKE DANI AT THE BEACH',
+      'description': 'BRIGHT, RADIANT, SHINING, SUNNY'
     },
-    'CONSIDER,MULL,PONDER,THINK': {
+    'BLOOD,BLUE,FULL,NEW': {
       'difficulty': 1,
-      'title': 'Contemplate',
-      'description': 'Consider, Think, Mull, Ponder'
+      'title': '____ MOON',
+      'description': 'FULL, BLUE, NEW, BLOOD'
     },
-    'DAY,NIGHT,SPRING,SUMMER': {
+    'GARLIC,MUSCLE,SLIP,SQUARE': {
       'difficulty': 2,
-      'title': 'ACOTAR',
-      'description': 'Bowler, Bucket, Dad, Top'
+      'title': 'TYPES OF KNOTS',
+      'description': 'SLIP, SQUARE, GARLIC, MUSCLE'
     },
-    'COLLECT,DERP,GARNER,STORE': {
+    'DEN,ERR,MULL,YELL': {
       'difficulty': 3,
-      'title': 'Accumulate',
-      'description': 'Bowler, Bucket, Dad, Top'
+      'title': 'THE B-DAY GIRL',
+      'description': 'DEN, YELL, MULL, ERR'
     }
   }
 }
