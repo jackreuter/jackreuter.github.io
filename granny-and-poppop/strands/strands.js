@@ -45,21 +45,21 @@ function initBoard() {
   // Event delegation for mouse and touch events
   board.addEventListener("mousedown", (event) => {
     const target = event.target.closest(".letter-circle");
-    if (target && board.contains(target)) {
+    if (target && board.contains(target) && target.textContent !== '●') {
       startDragging(event, target);
     }
   });
 
   board.addEventListener("mouseover", (event) => {
     const target = event.target.closest(".letter-circle");
-    if (target && board.contains(target)) {
+    if (target && board.contains(target) && target.textContent !== '●') {
       addLetter(event, target);
     }
   });
 
   board.addEventListener("touchstart", (event) => {
     const target = event.target.closest(".letter-circle");
-    if (target && board.contains(target)) {
+    if (target && board.contains(target) && target.textContent !== '●') {
       startDragging(event, target);
     }
   }, { passive: false });
@@ -67,7 +67,7 @@ function initBoard() {
   board.addEventListener("touchmove", (event) => {
     const touchEvent = event.touches[0];
     const target = document.elementFromPoint(touchEvent.clientX, touchEvent.clientY);
-    if (target && target.closest(".letter-circle") && board.contains(target)) {
+    if (target && target.closest(".letter-circle") && board.contains(target) && target.textContent !== '●') {
       addLetter(event, target.closest(".letter-circle"));
     }
   }, { passive: true });
@@ -85,7 +85,7 @@ function initBoard() {
 
 function startDragging(event, target) {
   const innerCircle = target.childNodes[0]
-  if (innerCircle.classList.contains('used')) { return }
+  if (innerCircle.classList.contains('used') || target.textContent === '●') { return }
 
   event.preventDefault() // Prevents the default drag behavior
   isDragging = true
@@ -105,7 +105,7 @@ function addLetter(event, target) {
     const coordinates = `${i},${j}`
     if (!selectedCoordinates.includes(coordinates)) {
       const innerCircle = target.childNodes[0]
-      if (innerCircle.classList.contains('used')) { return }
+      if (innerCircle.classList.contains('used') || target.textContent === '●') { return }
 
       const [prevI, prevJ] = selectedCoordinates[selectedCoordinates.length - 1].split(',').map(Number)
       if (Math.abs(i - prevI) > 1 || Math.abs(j - prevJ) > 1) { return }
@@ -206,49 +206,36 @@ function onTouchMove(event) {
 }
 
 function drawLine(startElement, endElement) {
-  const board = document.getElementById("game-board")
-  const line = document.createElement("div")
-  line.className = "line"
+  const board = document.getElementById("game-board");
+  const line = document.createElement("div");
+  line.className = "line";
 
-  const startRect = startElement.getBoundingClientRect()
-  const endRect = endElement.getBoundingClientRect()
-  const lineWeight = 10
+  const startRect = startElement.getBoundingClientRect();
+  const endRect = endElement.getBoundingClientRect();
+  const lineWeight = 10; // Thickness of the line
 
   const scrollX = window.scrollX || window.pageXOffset;
   const scrollY = window.scrollY || window.pageYOffset;
 
-  let x1 = Math.round(startRect.left + (startRect.width / 2)) + scrollX
-  let y1 = Math.round(startRect.top + (startRect.height / 2)) + scrollY
-  let x2 = Math.round(endRect.left + (endRect.width / 2)) + scrollX
-  let y2 = Math.round(endRect.top + (endRect.height / 2)) + scrollY
+  let x1 = Math.round(startRect.left + (startRect.width / 2)) + scrollX;
+  let y1 = Math.round(startRect.top + (startRect.height / 2)) + scrollY;
+  let x2 = Math.round(endRect.left + (endRect.width / 2)) + scrollX;
+  let y2 = Math.round(endRect.top + (endRect.height / 2)) + scrollY;
 
-  // Adjust coordinates based on direction
-  if (x2 > x1 || y2 > y1) {
-    x1 += lineWeight / 2
-    x2 += lineWeight / 2
-    y1 -= lineWeight / 2
-    y2 -= lineWeight / 2
-  } else {
-    x1 -= lineWeight / 2
-    x2 -= lineWeight / 2
-    y1 += lineWeight / 2
-    y2 += lineWeight / 2
-  }
+  const length = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+  const angle = Math.atan2(y2 - y1, x2 - x1) * (180 / Math.PI);
 
-  const length = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
-  const angle = Math.atan2(y2 - y1, x2 - x1) * (180 / Math.PI)
+  line.style.width = `${length}px`;
+  line.style.height = `${lineWeight}px`;
+  line.style.position = "absolute";
+  line.style.backgroundColor = "aqua";
+  line.style.transformOrigin = "0 50%"; // Transform origin at the middle of the line's thickness
+  line.style.top = `${y1 - lineWeight / 2}px`; // Center the line's height
+  line.style.left = `${x1}px`;
+  line.style.transform = `rotate(${angle}deg)`;
 
-  line.style.width = `${length}px`
-  line.style.transform = `rotate(${angle}deg)`
-  line.style.position = "absolute"
-  line.style.top = `${y1}px`
-  line.style.left = `${x1}px`
-  line.style.transformOrigin = "0 0"
-  line.style.backgroundColor = "aqua"
-  line.style.height = "10px"  // Increase the width of the line
-
-  board.appendChild(line)
-  lines.push(line) // Add the line to the lines array
+  board.appendChild(line);
+  lines.push(line); // Add the line to the lines array
 }
 
 initBoard()
