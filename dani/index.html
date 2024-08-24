@@ -2,74 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Mini</title>
-    <link rel="stylesheet" href="dani.css">
-    <link rel="stylesheet" href="../styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module">
+        import confetti from 'https://cdn.skypack.dev/canvas-confetti'
+
+        function fireConfetti() {
+            const button = document.getElementById('party-button');
+            const rect = button.getBoundingClientRect();
+            const x = (rect.left + rect.right) / 2 / window.innerWidth;
+            const y = (rect.top + rect.bottom) / 2 / window.innerHeight;
+            for (let i = 0; i < 1; i++) {
+                confetti({
+                    angle: Math.random() * 100 + 40,
+                    particleCount: Math.random() * 500 + 5,
+                    spread: Math.random() * 100 + 5,
+                    origin: {
+                        x: x,
+                        y: y
+                    }
+                })
+            }
+        }
+
+        window.fireConfetti = fireConfetti
+    </script>
 </head>
 <body>
-    <audio id="audioPlayer" src="/doc/assets/sounds/mini-complete.m4a"></audio>
-    <div class="top-bar">The Mini</div>
+    <main>
+        <div class="title">
+            <h1>Dani's turning 30!</h1>
+            <h4>Here are some puzzles to celebrate :)</h4>
+        </div>
+        <div class="box-container">
+            <a class="box" id="daniellele" href="daniellele">
+                <img class="icon" src="/doc/assets/images/beanie.png">
+                Wordle
+            </a>
+            <a class="box" id="dannections" href="dannections">
+                <img class="icon" src="/doc/assets/images/eclipse.png">
+                Connections
+            </a>
+            <a class="box" id="dani" href="dani">
+                <img class="icon" src="/doc/assets/images/baby-dani.png">
+                The Mini
+            </a>
+            <a class="box" id="dands" href="dands">
+                <img class="icon" src="/doc/assets/images/curly-fry.png">
+                Strands
+            </a>
+        </div>
 
-    <button onclick="location.href='/'" class="back-button">
-        <img class="back-button-image" src="/doc/assets/images/dani-back.png">
-    </button>
-    
-    <div id="game-board">
-    </div>
-
-    <div id="current-clue">
-        <div id="previous-clue"></div>
-        <div id="clue-text"></div>
-        <div id="next-clue"></div>
-    </div>
-
-    <div id="keyboard-cont">
-      <div class="first-row">
-          <button class="keyboard-button" id="q">q</button>
-          <button class="keyboard-button" id="w">w</button>
-          <button class="keyboard-button" id="e">e</button>
-          <button class="keyboard-button" id="r">r</button>
-          <button class="keyboard-button" id="t">t</button>
-          <button class="keyboard-button" id="y">y</button>
-          <button class="keyboard-button" id="u">u</button>
-          <button class="keyboard-button" id="i">i</button>
-          <button class="keyboard-button" id="o">o</button>
-          <button class="keyboard-button" id="p">p</button>
-      </div>
-      <div class="second-row">
-          <button class="keyboard-button" id="a">a</button>
-          <button class="keyboard-button" id="s">s</button>
-          <button class="keyboard-button" id="d">d</button>
-          <button class="keyboard-button" id="f">f</button>
-          <button class="keyboard-button" id="g">g</button>
-          <button class="keyboard-button" id="h">h</button>
-          <button class="keyboard-button" id="j">j</button>
-          <button class="keyboard-button" id="k">k</button>
-          <button class="keyboard-button" id="l">l</button>
-      </div>
-      <div class="third-row">
-          <button class="keyboard-button" id="z">z</button>
-          <button class="keyboard-button" id="x">x</button>
-          <button class="keyboard-button" id="c">c</button>
-          <button class="keyboard-button" id="v">v</button>
-          <button class="keyboard-button" id="b">b</button>
-          <button class="keyboard-button" id="n">n</button>
-          <button class="keyboard-button" id="m">m</button>
-          <button class="keyboard-button" id="Del">&#9003;</button>
-      </div>
-  </div>
-<script
-src="https://code.jquery.com/jquery-3.6.0.min.js"
-integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<script src="dani.js" type="module"></script>
+        <button id="party-button" onclick="fireConfetti()">PARTY</button>
+    </main>
 </body>
 </html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mini</title>
+    <link rel="stylesheet" href="dani.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<body>
+    <audio id="audioPlayer" src="/doc/assets/sounds/mini-complete.m4a"></audio>
+    <div class="top-bar">The Mini</div>
+
+    <button onclick="location.href='/dani'" class="back-button">
+        <img class="back-button-image" src="/doc/assets/images/dani-back.png">
+    </button>
+    
+    <div id="game-board">
+    </div>
+
+    <div id="current-clue">
+        <div id="previous-clue"></div>
+        <div id="clue-text"></div>
+        <div id="next-clue"></div>
+    </div>
+
+    <div id="keyboard-cont">
+      <div class="first-row">
+          <button class="keyboard-button" id="q">q</button>
+          <button class="keyboard-button" id="w">w</button>
+          <button class="keyboard-button" id="e">e</button>
+          <button class="keyboard-button" id="r">r</button>
+          <button class="keyboard-button" id="t">t</button>
+          <button class="keyboard-button" id="y">y</button>
+          <button class="keyboard-button" id="u">u</button>
+          <button class="keyboard-button" id="i">i</button>
+          <button class="keyboard-button" id="o">o</button>
+          <button class="keyboard-button" id="p">p</button>
+      </div>
+      <div class="second-row">
+          <button class="keyboard-button" id="a">a</button>
+          <button class="keyboard-button" id="s">s</button>
+          <button class="keyboard-button" id="d">d</button>
+          <button class="keyboard-button" id="f">f</button>
+          <button class="keyboard-button" id="g">g</button>
+          <button class="keyboard-button" id="h">h</button>
+          <button class="keyboard-button" id="j">j</button>
+          <button class="keyboard-button" id="k">k</button>
+          <button class="keyboard-button" id="l">l</button>
+      </div>
+      <div class="third-row">
+          <button class="keyboard-button" id="z">z</button>
+          <button class="keyboard-button" id="x">x</button>
+          <button class="keyboard-button" id="c">c</button>
+          <button class="keyboard-button" id="v">v</button>
+          <button class="keyboard-button" id="b">b</button>
+          <button class="keyboard-button" id="n">n</button>
+          <button class="keyboard-button" id="m">m</button>
+          <button class="keyboard-button" id="Del">&#9003;</button>
+      </div>
+  </div>
+<script
+src="https://code.jquery.com/jquery-3.6.0.min.js"
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="dani.js" type="module"></script>
+</body>
+</html>
