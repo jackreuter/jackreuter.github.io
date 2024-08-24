@@ -1,7 +1,7 @@
 import { WORDS } from "./words.js"
 import confetti from 'https://cdn.skypack.dev/canvas-confetti'
 
-const CORRECT_COLOR = '#40E0D0'
+const CORRECT_COLOR = 'limegreen'
 const NUMBER_OF_GUESSES = 6;
 let guessesRemaining = NUMBER_OF_GUESSES;
 let currentGuess = [];
