@@ -11,15 +11,9 @@ main {
 }
 
 #party-button {
-  width: 90vw;
-  height: 20vw;
-  border-radius: 10px;
-  margin: 5vw;
-  background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+  margin: 2.5vw;
   background-size: 400%;
   color: white;
-  font-size: x-large;
-  font-weight: bold;
   border: none;
   outline: none;
   cursor: pointer;
@@ -27,7 +21,11 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  padding: 0px;
+}
+
+#party-button-image {
+  height: 30vw;
 }
 
 #party-button:active {
@@ -61,24 +59,24 @@ h4 {
 
 @keyframes rainbow-text {
   0%, 100% {
-      color: #00ced1;
-      text-shadow: 3px 3px #008b8b, 6px 6px #20b2aa, 9px 9px #5f9ea0;
+      color: #0057d1; /* Primary blue */
+      text-shadow: 3px 3px #1e90ff, 6px 6px #4682b4, 9px 9px #4169e1; /* Blue shades */
   }
   20% {
-      color: #20b2aa;
-      text-shadow: 3px 3px #5f9ea0, 6px 6px #00ced1, 9px 9px #008b8b;
+      color: hotpink; /* Pink */
+      text-shadow: 3px 3px #ff69b4, 6px 6px #ff1493, 9px 9px #db7093; /* Various shades of pink */
   }
   40% {
-      color: #5f9ea0;
-      text-shadow: 3px 3px #00ced1, 6px 6px #008b8b, 9px 9px #20b2aa;
+      color: yellow; /* Yellow */
+      text-shadow: 3px 3px #ffd700, 6px 6px #ffec8b, 9px 9px #f0e68c; /* Yellow shades */
   }
   60% {
-      color: #008b8b;
-      text-shadow: 3px 3px #20b2aa, 6px 6px #5f9ea0, 9px 9px #00ced1;
+      color: #ff6347; /* Coral/Red */
+      text-shadow: 3px 3px #ff4500, 6px 6px #ff7f50, 9px 9px #ff8c69; /* Various shades of coral/red */
   }
   80% {
-      color: #00ced1;
-      text-shadow: 3px 3px #008b8b, 6px 6px #20b2aa, 9px 9px #5f9ea0;
+      color: #ff69b4; /* Pink */
+      text-shadow: 3px 3px #db7093, 6px 6px #ff1493, 9px 9px #ff69b4; /* Pink shades */
   }
 }
 
@@ -124,19 +122,19 @@ a:active {
 }
 
 #connections {
-  background-color: plum;
+  background-color: hotpink;
 }
 
 #mini {
-  background-color: lightblue;
+  background-color: rgb(0, 110, 255);
 }
 
 #strands {
-  background-color: aquamarine;
+  background-color: rgb(255, 34, 34);
 }
 
 #wordle {
-  background-color: greenyellow;
+  background-color: yellow;
 }
 
 .icon {
