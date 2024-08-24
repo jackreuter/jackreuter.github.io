@@ -1,0 +1,232 @@
+html {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  touch-action: manipulation;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#party-button {
+  width: 90vw;
+  height: 20vw;
+  border-radius: 10px;
+  margin: 5vw;
+  background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400%;
+  color: white;
+  font-size: x-large;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+#party-button:active {
+  transform: translateY(4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#party-button:hover {
+  animation: rainbow 5s ease infinite;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.title h1 {
+  font-size: xx-large;
+  color: #00ced1; /* Higher contrast teal color */
+  text-align: center;
+  text-shadow: 3px 3px #008b8b, 6px 6px #20b2aa, 9px 9px #5f9ea0; /* Darker shadows for higher contrast */
+  animation: rainbow-text 3s infinite;
+  margin: 0px;
+}
+
+h4 {
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+}
+
+@keyframes rainbow-text {
+  0%, 100% {
+      color: #00ced1;
+      text-shadow: 3px 3px #008b8b, 6px 6px #20b2aa, 9px 9px #5f9ea0;
+  }
+  20% {
+      color: #20b2aa;
+      text-shadow: 3px 3px #5f9ea0, 6px 6px #00ced1, 9px 9px #008b8b;
+  }
+  40% {
+      color: #5f9ea0;
+      text-shadow: 3px 3px #00ced1, 6px 6px #008b8b, 9px 9px #20b2aa;
+  }
+  60% {
+      color: #008b8b;
+      text-shadow: 3px 3px #20b2aa, 6px 6px #5f9ea0, 9px 9px #00ced1;
+  }
+  80% {
+      color: #00ced1;
+      text-shadow: 3px 3px #008b8b, 6px 6px #20b2aa, 9px 9px #5f9ea0;
+  }
+}
+
+.title {
+  text-align: center;
+}
+
+.box-container{
+  background-color:#fff;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  aspect-ratio: 1 / 1;
+  grid-row: auto auto;
+  grid-column-gap: 2vw;
+  grid-row-gap: 2vw;
+  width: 98vw;
+  .box{
+    color: #000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+  }
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+}
+
+a:link { 
+  text-decoration: none; 
+} 
+a:visited { 
+  text-decoration: none; 
+} 
+a:hover { 
+  text-decoration: none; 
+} 
+a:active { 
+  text-decoration: none; 
+}
+
+#connections {
+  background-color: plum;
+}
+
+#mini {
+  background-color: lightblue;
+}
+
+#strands {
+  background-color: aquamarine;
+}
+
+#wordle {
+  background-color: greenyellow;
+}
+
+.icon {
+  height: 25vw;
+  margin-bottom: 2vw;
+}
+
+.back-button {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.back-button:focus {
+  outline: none;
+}
+
+.back-button-image {
+  height: 9vh;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  font-weight: bold;
+  height: 9vh;
+}
+
+#keyboard-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: teal;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#keyboard-cont div {
+  display: flex;
+}
+
+.first-row {
+  display: flex;
+  width: 100vw;
+  height: 40px;
+  justify-content: center;
+}
+
+.second-row {
+  display: flex;
+  width: 90vw;
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.third-row {
+  display: flex;
+  width: 95vw;
+  height: 40px;
+  justify-content: center;
+}
+
+.keyboard-button {
+  font-weight: 400;
+  font-size: large;
+  margin: 0 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  flex: 1;
+  outline: none;
+  border: none;
+  background-color: lightsteelblue;
+  padding: 0px;
+}
+
+.enter-button {
+  font-weight: 400;
+  font-size: small;
+  margin: 0 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  flex: 1;
+  outline: none;
+  border: none;
+  background-color: lightsteelblue;
+  padding: 4px;
+}

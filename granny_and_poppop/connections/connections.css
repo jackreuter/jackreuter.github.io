@@ -1,0 +1,130 @@
+body {
+  margin-top: 5vw;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 85vh;
+  justify-content: center;
+}
+
+.advice {
+  font-size: large;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+#game-board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 95vw;
+}
+
+.box {
+  position: relative;
+  font-size: medium;
+  font-weight: 700;
+  flex: 1 1 20%; /* Flex basis to allow for resizing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;
+  background-color: gainsboro;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+  margin: 4px; /* Margin to separate cards */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effect */
+}
+
+.row {
+  display: flex;
+  flex: 1 1 20%; /* Flex basis to allow for resizing */
+  width: 100%;
+}
+
+.submit-button {
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  margin-left: 5px;
+  padding: 12px 24px;
+  font-size: medium;
+  background-color: black;
+  color: white;
+}
+
+.submit-button:disabled {
+  background-color: gainsboro; /* Grey background when disabled */
+  color: black;
+  cursor: not-allowed; /* Not-allowed cursor when disabled */
+}
+
+.shuffle-button {
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  margin-left: 5px;
+  padding: 12px 24px;
+  font-size: medium;
+  background-color: turquoise;
+}
+
+.deselect-all-button {
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  margin-left: 5px;
+  padding: 12px 24px;
+  font-size: medium;
+  background-color: teal;
+}
+
+.answer-bar {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  aspect-ratio: 4 / 1;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+  margin: 5px; /* Margin to separate cards */
+  justify-content: center;
+  align-items: center;
+}
+
+.answer-title {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.answer-description {
+  font-size: large;
+  margin-top: 5px;
+}
+
+.bottom-bar {
+  display: flex;
+  align-items: center;
+  margin-top: 15px
+}
+
+.guesses-remaining {
+  font-size: large;
+  display: flex;
+}
+
+#guess-dots {
+  display: flex;
+}
+
+.dot {
+  width: 10px;
+  aspect-ratio: 1 / 1;
+  margin: 5px;
+  border-radius: 50%;
+  background-color: black;
+}

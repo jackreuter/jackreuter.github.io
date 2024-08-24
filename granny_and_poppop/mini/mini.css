@@ -1,0 +1,91 @@
+h1 {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#game-board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  aspect-ratio: 1 / 1;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.top-row {
+  border-top: 1px solid black;
+}
+
+.left-column {
+  border-left: 1px solid black;
+}
+
+.letter-box {
+  position: relative;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  font-size: xxx-large;
+  font-weight: 500;
+  flex: 1 1 20%; /* Flex basis to allow for resizing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+.letter-row {
+  display: flex;
+  flex: 1 1 20%; /* Flex basis to allow for resizing */
+  width: 100%;
+}
+
+.black-box {
+  background-color: black;
+}
+
+.primary-selection {
+  background-color: yellow;
+}
+
+.secondary-selection {
+  background-color: aqua;
+}
+
+#current-clue {
+  background-color: aqua;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+#previous-clue {
+  width: 5vw;
+  margin-left: 5px;
+  font-size: x-large;
+}
+
+#next-clue {
+  width: 5vw;
+  margin-right: 5px;
+  font-size: x-large;
+}
+
+#clue-text {
+  width: 90vw;
+  font-size: large;
+  margin: 5px;
+}
+
+.box-number {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 16px;
+  color: black;
+}

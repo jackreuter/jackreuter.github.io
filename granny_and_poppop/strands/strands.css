@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 95vh;
+  justify-content: center;
+}
+
+.theme-title {
+  text-align: center;
+  font-size: x-large;
+  font-weight: 700;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.theme-card {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  text-align: center;
+  width: 65vw;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.stripe {
+  width: 100%;
+  height: 25px;
+  background-color: aqua;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.current-string {
+  font-size: large;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+#game-board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80vw;
+}
+
+.progress-indicator {
+  font-size: large;
+  margin-top: 15px;
+}
+
+.bold-number {
+  font-weight: bold;
+}
+
+.letter-box {
+  position: relative;
+  font-size: x-large;
+  flex: 1 1 20%; /* Flex basis to allow for resizing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;
+}
+
+.letter-circle {
+  width: 98%; /* Adjust as needed */
+  height: 98%; /* Adjust as needed */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none; /* Prevent text selection */
+  z-index: 1;
+}
+
+.inner-circle {
+  width: 85%; /* Adjust as needed */
+  height: 85%; /* Adjust as needed */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none; /* Prevent text selection */
+}
+
+
+.letter-row {
+  display: flex;
+  flex: 1 1 20%; /* Flex basis to allow for resizing */
+  width: 100%;
+}
