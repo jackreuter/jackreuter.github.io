@@ -1,42 +1,42 @@
 export const PUZZLE = {
   'words': [
-    'MULL',
-    'DEN',
-    'YELL',
-    'ERR',
-    'GARLIC',
-    'SLIP',
-    'SQUARE',
-    'MUSCLE',
-    'FULL',
-    'BLOOD',
-    'BLUE',
-    'NEW',
-    'BRIGHT',
-    'SHINING',
-    'RADIANT',
-    'SUNNY'
+    'CURD',
+    'STICK',
+    'WHEEL',
+    'HEAD',
+    'GIN',
+    'GOLF',
+    'CASINO',
+    'PALACE',
+    'BREW',
+    'BADGE',
+    'PACK',
+    'STEEL',
+    'BOURBON',
+    'BEER',
+    'RUM',
+    'TEQUILA'
   ],
   'answers': {
-    'BRIGHT,RADIANT,SHINING,SUNNY': {
+    'BEER,BOURBON,RUM,TEQUILA': {
       'difficulty': 0,
-      'title': 'LIKE DANI AT THE BEACH',
-      'description': 'BRIGHT, RADIANT, SHINING, SUNNY'
+      'title': 'BOOZE',
+      'description': 'BEER, BOURBON, RUM, TEQUILA'
     },
-    'BLOOD,BLUE,FULL,NEW': {
+    'CASINO,GIN,GOLF,PALACE': {
       'difficulty': 1,
-      'title': '____ MOON',
-      'description': 'FULL, BLUE, NEW, BLOOD'
+      'title': 'CARD GAMES',
+      'description': 'GIN, GOLF, CASINO, PALACE'
     },
-    'GARLIC,MUSCLE,SLIP,SQUARE': {
+   'CURD,HEAD,STICK,WHEEL': {
       'difficulty': 2,
-      'title': 'TYPES OF KNOTS',
-      'description': 'SLIP, SQUARE, GARLIC, MUSCLE'
+      'title': 'FORMS OF CHEESE',
+      'description': 'CURD, STICK, WHEEL, HEAD'
     },
-    'DEN,ERR,MULL,YELL': {
+    'BADGE,BREW,PACK,STEEL': {
       'difficulty': 3,
-      'title': 'THE B-DAY GIRL',
-      'description': 'DEN, YELL, MULL, ERR'
+      'title': 'TEAM NAMES WITH ___-ERS',
+      'description': 'PACK, STEEL, BREW, BADGE'
     }
   }
 }

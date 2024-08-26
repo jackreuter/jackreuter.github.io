@@ -54,11 +54,11 @@ body {
 }
 
 .secondary-selection {
-  background-color: aqua;
+  background-color: #7ddcff;
 }
 
 #current-clue {
-  background-color: aqua;
+  background-color: #7ddcff;
   height: 50px;
   display: flex;
   align-items: center;

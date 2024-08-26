@@ -52,7 +52,7 @@ function initBoard() {
         if (j === 0) { box.classList.add("left-column") }
 
         if (i === 0) {
-          if (j === 0) {
+          if (j === 2) {
             box.classList.add("primary-selection")
           } else {
             box.classList.add("secondary-selection")

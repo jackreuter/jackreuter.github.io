@@ -212,7 +212,7 @@ a:active {
   flex: 1;
   outline: none;
   border: none;
-  background-color: rgb(129, 255, 242);
+  background-color: #7ddcff;
   padding: 0px;
 }
 
@@ -225,6 +225,6 @@ a:active {
   flex: 1;
   outline: none;
   border: none;
-  background-color: rgb(129, 255, 242);
+  background-color: #7ddcff;
   padding: 4px;
 }
