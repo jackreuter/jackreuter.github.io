@@ -7,7 +7,7 @@ export const PUZZLE = {
     ['y','a','s','0','0']
   ],
   'across': [
-    'With 6-across, poolside treats',
+    'With 6-across, poolside chews',
     'Difficulty rating, in golf',
     'See 1-across',
     '___ garde',
@@ -17,7 +17,7 @@ export const PUZZLE = {
     'Command to Malfoy or Nova',
     'Hot stuff in a playground game',
     'Root beer alternatives',
-    'Spam ___, world reknowned golf outing held in Arcadia',
+    'The Spam ___, famous golf outing held in Arcadia, WI',
     'Pittsburgh to San Francisco direction'
   ]
 }
